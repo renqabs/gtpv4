@@ -1,0 +1,8 @@
+fastapi
+httpx
+pydantic
+pyinstaller
+python-dotenv
+starlette
+uvicorn
+aiohttp

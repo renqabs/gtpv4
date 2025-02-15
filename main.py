@@ -44,7 +44,8 @@ headers = {
 APP_SECRET = os.getenv("APP_SECRET","666")
 ALLOWED_MODELS = [
     {"id": "claude-3-5-sonnet", "name": "claude3"},
-    {"id": "gpt-4o", "name": "gpt4o"}
+    {"id": "gpt-4o", "name": "gpt4o"},
+    {"id": "deepseek-r1", "name": "deepseek"}
 ]
 # 配置CORS
 app.add_middleware(

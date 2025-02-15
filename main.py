@@ -169,6 +169,21 @@ async def chat_completions(
                 ]
             ),
         }
+    elif "deepseek" in request.model:
+        json_data = {
+            "sessionId": str(uuid.uuid4()).replace("-", ""),
+            "sendTime": datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
+            "attachments": [],
+            "firstQuestionFlag": False,
+            "searchFlag": False,
+            "language": "zh-CN",
+            "prompt": "\n".join(
+                [
+                    f"{'User' if msg.role == 'user' else 'Assistant'}: {msg.content}"
+                    for msg in request.messages
+                ]
+            ),
+        }
     else:
         json_data = {
             "chatUuid": str(uuid.uuid4()).replace("-", ""),
